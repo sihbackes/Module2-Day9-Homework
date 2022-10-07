@@ -108,6 +108,19 @@ console.log(
   "\n------------------------------------- EXERCISE 6 --------------------------------"
 );
 
+function check3and7(number) {
+  if (number % 3 === 0 && number % 7 === 0) {
+    return `The number ${number} is a multiple of 3 and 7.`;
+  } else if (number % 3 === 0) {
+    return `The number ${number} is a multiple of 3.`;
+  } else if (number % 7 === 0) {
+    return `The number ${number} is a multiple of 7.`;
+  } else if (number % 3 !== 0 && number % 7 !== 0) {
+    return `The number ${number} is not a multiple of 3 or 7.`;
+  }
+}
+console.log(check3and7(50));
+
 /* EXERCISE 7
  Write a function called "reverseString" which programmatically reverses a given string (es.: Strive => evirtS).
 */
@@ -115,30 +128,67 @@ console.log(
   "\n------------------------------------- EXERCISE 7 --------------------------------"
 );
 
+function reverseString(string) {
+  return string.split("").reverse().join("");
+}
+
+console.log(reverseString("simone"));
+
+////////////////////// second solution ////////////////////////////////
+
+function Reverse(string) {
+  let array = string.split("");
+  let result = "";
+  for (let index = array.length - 1; index >= 0; index--) {
+    result = result + array[index];
+  }
+  return result;
+}
+
+console.log(Reverse("alexandre"));
+
 /* EXERCISE 8
  Write a function called "upperFirst" which capitalizes the first letter of each word of a given string passed as a parameter.
 */
-
 console.log(
   "\n------------------------------------- EXERCISE 8 --------------------------------"
 );
 
+function upperFirst(string) {
+  let result = string;
+  return result[0].toUpperCase() + result.substring(1);
+}
+console.log(upperFirst("simone"));
+
 /* EXERCISE 9
  Write a function called "cutString" which creates a new string without the first and last character of a given string passed as a parameter.
 */
-
 console.log(
   "\n------------------------------------- EXERCISE 9 --------------------------------"
 );
 
+function cutString(string) {
+  let result = string;
+  return result.substring(1, result.length - 1);
+}
+
+console.log(cutString("epicode"));
+
 /* EXERCISE 10
  Write a function called "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10.
 */
-
 console.log(
   "\n------------------------------------- EXERCISE 10 --------------------------------"
 );
 
+function giveMeRandom(n) {
+  let array = [];
+  for (let index = 0; index < n; index++) {
+    array.push(Math.floor(Math.random() * 11));
+  }
+  return array;
+}
+console.log(giveMeRandom(4));
 /* WHEN YOU ARE FINISHED
  Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today's Eduflow.
 */
